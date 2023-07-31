@@ -1,5 +1,8 @@
 ﻿using System.Text.Json;
 using System.Text.Json.Serialization;
+using System.IO;
+using System.Collections.Generic;
+using System.Collections;
 
 namespace HW18_1
 {
@@ -7,6 +10,7 @@ namespace HW18_1
     {
         static void Main()
         {
+           
             var Venus = new
             {
                 Name = "Venus",
@@ -14,7 +18,8 @@ namespace HW18_1
                 EquatorLength = 38025,
                 PreviousPlanet = "Mercury"
             };
-
+           
+            
             var Earth = new
             {
                 Name = "Earth",
@@ -22,6 +27,7 @@ namespace HW18_1
                 EquatorLength = 40075,
                 PreviousPlanet = Venus
             };
+            
 
             var Mars = new
             {
@@ -30,6 +36,7 @@ namespace HW18_1
                 EquatorLength = 21344,
                 PreviousPlanet = Earth
             };
+           
 
             var Venus2 = new
             {
@@ -39,20 +46,24 @@ namespace HW18_1
                 PreviousPlanet = "Mercury"
             };
 
+            var options = new JsonSerializerOptions
+            {
+                WriteIndented = true
+            };
+
+
             string VenusEquivalent(object Planet)
             {
                 if (Planet.Equals(Venus))
                     return $"{Planet.GetType().GetProperty("Name")?.GetValue(Planet)} эквивалентна Венере";
                 else return $"{Planet.GetType().GetProperty("Name")?.GetValue(Planet)} неэквивалентна Венере";
             }
-            var options = new JsonSerializerOptions
-            {
-                WriteIndented = true
-            };
+            
             Console.WriteLine($"Планета Венера {JsonSerializer.Serialize(Venus, options)}\n{VenusEquivalent(Venus)}\n\n" +
                               $"Планета Земля {JsonSerializer.Serialize(Earth, options)}\n{VenusEquivalent(Earth)}\n\n" +
                               $"Планета Марс {JsonSerializer.Serialize(Mars, options)}\n{VenusEquivalent(Mars)}\n\n" +
                               $"Планета Венера {JsonSerializer.Serialize(Venus2, options)}\n{VenusEquivalent(Venus2)}");
+  
             Console.ReadLine();
         }
     }
