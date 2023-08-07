@@ -18,9 +18,9 @@ namespace HW18_2
         {
             _venus = new Planet("Venus", 2, 38025);
             _planets.Add(_venus);
-            _earth = new Planet("Earth", 3, 40075, _venus);
+            _earth = new Planet("Earth", 3, 40075);
             _planets.Add(_earth);
-            _mars = new Planet("Mars", 4, 21344, _earth);
+            _mars = new Planet("Mars", 4, 21344);
             _planets.Add(_mars);
         }
         /// <summary>

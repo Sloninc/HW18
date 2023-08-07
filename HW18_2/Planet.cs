@@ -11,12 +11,16 @@ namespace HW18_2
     /// </summary>
     public class Planet
     {
-        public Planet(string name, int numFromSun, int equatorLength, Planet? previousPlanet = null)
+       private static Planet? _tempPlanet=null;
+        public Planet(string name, int numFromSun, int equatorLength)
         {
             Name = name;
             NumFromSun = numFromSun;
             EquatorLength = equatorLength;
-            PreviousPlanet = previousPlanet;
+            if(_tempPlanet==null)
+                PreviousPlanet = null;
+            else PreviousPlanet = _tempPlanet;
+            _tempPlanet = this;
         }
         /// <summary>
         /// название планеты
