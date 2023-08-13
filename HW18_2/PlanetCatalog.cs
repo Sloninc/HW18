@@ -42,4 +42,3 @@ namespace HW18_2
         }
     }
 }
-

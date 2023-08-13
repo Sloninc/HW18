@@ -1,23 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace HW18_2
+﻿namespace HW18_2
 {
     /// <summary>
     /// Класс для создания экземпляров планет.
     /// </summary>
     public class Planet
     {
-       private static Planet? _tempPlanet=null;
+        private static Planet? _tempPlanet = null;
         public Planet(string name, int numFromSun, int equatorLength)
         {
             Name = name;
             NumFromSun = numFromSun;
             EquatorLength = equatorLength;
-            if(_tempPlanet==null)
+            if (_tempPlanet == null)
                 PreviousPlanet = null;
             else PreviousPlanet = _tempPlanet;
             _tempPlanet = this;
@@ -40,4 +34,3 @@ namespace HW18_2
         public Planet? PreviousPlanet { get; }
     }
 }
-
