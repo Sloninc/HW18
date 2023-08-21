@@ -5,16 +5,12 @@
     /// </summary>
     public class Planet
     {
-        private static Planet? _tempPlanet = null;
-        public Planet(string name, int numFromSun, int equatorLength)
+        public Planet(string name, int numFromSun, int equatorLength, Planet previousPlanet)
         {
             Name = name;
             NumFromSun = numFromSun;
             EquatorLength = equatorLength;
-            if (_tempPlanet == null)
-                PreviousPlanet = null;
-            else PreviousPlanet = _tempPlanet;
-            _tempPlanet = this;
+            PreviousPlanet = previousPlanet;
         }
         /// <summary>
         /// название планеты

@@ -16,11 +16,11 @@ namespace HW18_2
         int _count = 0;
         public PlanetCatalog()
         {
-            _venus = new Planet("Venus", 2, 38025);
+            _venus = new Planet("Venus", 2, 38025, null);
             _planets.Add(_venus);
-            _earth = new Planet("Earth", 3, 40075);
+            _earth = new Planet("Earth", 3, 40075, _venus);
             _planets.Add(_earth);
-            _mars = new Planet("Mars", 4, 21344);
+            _mars = new Planet("Mars", 4, 21344, _earth);
             _planets.Add(_mars);
         }
         /// <summary>

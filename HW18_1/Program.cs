@@ -8,7 +8,6 @@ namespace HW18_1
 {
     internal class Program
     {
-        const object? InsteadPreviousPlanet = null;
         static void Main()
         {
             var Venus = new
@@ -16,7 +15,7 @@ namespace HW18_1
                 Name = "Venus",
                 NumFromSun = 2,
                 EquatorLength = 38025,
-                PreviousPlanet = InsteadPreviousPlanet
+                PreviousPlanet = (object?)null 
             };
 
 
@@ -43,7 +42,7 @@ namespace HW18_1
                 Name = "Venus",
                 NumFromSun = 2,
                 EquatorLength = 38025,
-                PreviousPlanet = InsteadPreviousPlanet
+                PreviousPlanet = (object?)null
             };
 
             var options = new JsonSerializerOptions
