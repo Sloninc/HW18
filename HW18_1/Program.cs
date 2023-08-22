@@ -15,7 +15,7 @@ namespace HW18_1
                 Name = "Venus",
                 NumFromSun = 2,
                 EquatorLength = 38025,
-                PreviousPlanet = (object?)null 
+                PreviousPlanet = default(object)
             };
 
 
