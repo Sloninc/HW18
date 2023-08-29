@@ -18,9 +18,9 @@ namespace HW18_3
         {
             _venus = new Planet("Venus", 2, 38025);
             _planets.Add(_venus);
-            _earth = new Planet("Earth", 3, 40075);
+            _earth = new Planet("Earth", 3, 40075, _venus);
             _planets.Add(_earth);
-            _mars = new Planet("Mars", 4, 21344);
+            _mars = new Planet("Mars", 4, 21344, _earth);
             _planets.Add(_mars);
         }
         /// <summary>
@@ -29,7 +29,7 @@ namespace HW18_3
         /// <param name="namePlanet"> Название планеты</param>
         /// <param name="func">лямбда-выражение, которое проверяет на соответствие планету, введенную пользователем</param>
         /// <returns></returns>
-        public (int, int, string) GetPlanet(string namePlanet, Func<string, string>? func)
+        public (int, int, string) GetPlanet(string namePlanet, Func<string, string> func)
         {
             string? answer = func(namePlanet);
             if (answer != null)

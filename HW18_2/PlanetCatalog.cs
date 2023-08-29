@@ -16,7 +16,7 @@ namespace HW18_2
         int _count = 0;
         public PlanetCatalog()
         {
-            _venus = new Planet("Venus", 2, 38025, null);
+            _venus = new Planet("Venus", 2, 38025);
             _planets.Add(_venus);
             _earth = new Planet("Earth", 3, 40075, _venus);
             _planets.Add(_earth);

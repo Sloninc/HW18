@@ -5,7 +5,7 @@
     /// </summary>
     public class Planet
     {
-        public Planet(string name, int numFromSun, int equatorLength, Planet? previousPlanet)
+        public Planet(string name, int numFromSun, int equatorLength, Planet? previousPlanet=null)
         {
             Name = name;
             NumFromSun = numFromSun;
